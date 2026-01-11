@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 HUMAN - WARNING</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Screen A: Error Page - WARNING STYLE -->
+    <div id="screen-error" class="wrap">
+      <div class="error-card">
+        <div class="error-logo mono">404 HUMAN</div>
+
+        <div class="error-warning">
+          <h3 class="mono">⚠ WARNING</h3>
+          <p><strong>Excessive techno exposure may cause:</strong></p>
+          <p>
+            Euphoria, uncontrollable head movements, increased heart rate,
+            dilated pupils, distorted reality, loss of time, madness or
+            oblivion.
+          </p>
+          <p>
+            <strong
+              >Continue at your own risk and drop the bass
+              irresponsibly.</strong
+            >
+          </p>
+        </div>
+
+        <div class="error-caution mono">RAVE CAUTION: FUNCTION NOT FOUND</div>
+      </div>
+    </div>
+
+    <!-- Screen B: Label Page -->
+    <div id="screen-label" class="hidden">
+      <div class="page">
+        <!-- Hero -->
+        <section class="hero">
+          <div class="hero-logo mono">404<br />HUMAN</div>
+          <div class="hero-mask"></div>
+          <nav class="nav-minimal">
+            <a href="#video">VIDEO</a>
+            <a href="#party">PARTY</a>
+            <a href="#goods">GOODS</a>
+            <a href="#photo">PHOTO</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
+        </section>
+
+        <!-- Video Section -->
+        <section class="section" id="video">
+          <h2 class="section-title">VIDEO ARCHIVE</h2>
+          <div class="video-container">
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/q2I-CaUDK_0"
+                title="404 HUMAN"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <!-- Party Archive Section -->
+        <section class="section" id="party">
+          <h2 class="section-title">PARTY ARCHIVE</h2>
+          <div class="poster-grid">
+            <div class="poster-item">
+              <img
+                src="images/poster1.jpg"
+                alt="PIZDETS - 26.1.9"
+                class="poster-img"
+                loading="lazy"
+              />
+            </div>
+            <div class="poster-item">
+              <img
+                src="images/poster2.jpg"
+                alt="AXIV x KROV - DEC 6TH, 2025"
+                class="poster-img"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        <!-- Goods Section -->
+        <section class="section" id="goods">
+          <h2 class="section-title">GOODS DROP</h2>
+
+          <div class="goods-grid">
+            <!-- KEYCHAIN SET -->
+            <a
+              class="product-card"
+              href="https://네이버/스마트스토어/상품링크1"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/IMG_0147.PNG"
+                  alt="404 Keychain Set"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-name mono">404 KEYCHAIN SET</div>
+                <div class="product-price mono">₩32,000</div>
+              </div>
+            </a>
+
+            <!-- KEYCHAIN -->
+            <a
+              class="product-card"
+              href="https://네이버/스마트스토어/상품링크2"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/IMG_0144.PNG"
+                  alt="404 Keychain"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-name mono">404 KEYCHAIN</div>
+                <div class="product-price mono">₩18,000</div>
+              </div>
+            </a>
+
+            <!-- TEE -->
+            <a
+              class="product-card"
+              href="https://네이버/스마트스토어/상품링크3"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/IMG_9737.jpg"
+                  alt="404 ERROR TEE"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-name mono">ERROR TEE</div>
+                <div class="product-price mono">₩45,000</div>
+              </div>
+            </a>
+
+            <!-- KEYCHAIN ALT -->
+            <a
+              class="product-card"
+              href="https://네이버/스마트스토어/상품링크4"
+              target="_blank"
+              rel="noopener"
+            >
+              <div class="product-thumb">
+                <img
+                  src="images/IMG_0142.PNG"
+                  alt="404 Keychain Alt"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-info">
+                <div class="product-name mono">404 KEYCHAIN (ALT)</div>
+                <div class="product-price mono">₩18,000</div>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Photo Section (RANDOM + VIEW ALL) -->
+        <section class="section" id="photo">
+          <h2 class="section-title">PHOTO WORKS</h2>
+
+          <div class="photo-controls">
+            <button id="btnShuffle" class="photo-btn mono">RANDOMIZE</button>
+            <button id="btnViewAll" class="photo-btn mono">VIEW ALL</button>
+          </div>
+
+          <div
+            id="photoGrid"
+            class="photo-grid"
+            aria-label="Photo gallery"
+          ></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section" id="contact">
+          <h2 class="section-title">CONTACT</h2>
+          <div class="contact-simple">
+            <a
+              href="https://instagram.com/404human_official"
+              class="contact-line mono"
+              target="_blank"
+              rel="noopener"
+              >INSTAGRAM / @404HUMAN_OFFICIAL</a
+            >
+            <a href="mailto:404humannn@gmail.com" class="contact-line mono"
+              >EMAIL / 404humannn@gmail.com</a
+            >
+            <a
+              href="https://www.youtube.com/@404human-c9e"
+              class="contact-line mono"
+              target="_blank"
+              rel="noopener"
+              >YOUTUBE / @404HUMAN</a
+            >
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="backdrop" class="backdrop">
+      <div class="modal">
+        <h2 class="mono">SYSTEM ERROR</h2>
+        <p class="mono">0xDEADBEEF / 0x404</p>
+        <div class="btns">
+          <button id="btnOk">OK</button>
+          <button id="btnCancel">CANCEL</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox (Image Preview) -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose">×</button>
+
+      <div class="lightbox-inner">
+        <img id="lightboxImg" class="lightbox-img" alt="Photo preview" />
+        <div id="lightboxCaption" class="lightbox-caption mono"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

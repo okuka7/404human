@@ -15,4 +15,6 @@ app.get("*", (req, res) => {
   return res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get("/health", (req, res) => res.send("ok"));
+
 app.listen(PORT, () => console.log("running:", PORT));

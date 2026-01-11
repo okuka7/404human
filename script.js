@@ -80,7 +80,7 @@ const RANDOM_COUNT = 8;
  * const BASE_URL = "https://pub-xxxx.r2.dev/photos";
  * const BASE_URL = "https://res.cloudinary.com/xxx/image/upload/v123";
  */
-const BASE_URL = "https://YOUR_IMAGE_HOST/photos";
+const BASE_URL = "/images/photos";
 
 function normalizeBaseUrl(url) {
   return url.replace(/\/+$/, ""); // 끝 슬래시 제거

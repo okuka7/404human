@@ -70,6 +70,28 @@ let allPhotos = [];
 let isViewAll = false;
 const RANDOM_COUNT = 8;
 
+/**
+ * ✅ 여기에 "사진이 실제로 올라가있는 곳"의 베이스 URL을 넣어줘.
+ * - 끝에 /photos 처럼 폴더까지 포함해도 됨.
+ * - 마지막에 슬래시(/)는 있어도 되고 없어도 됨(아래에서 정리해줌)
+ *
+ * 예시:
+ * const BASE_URL = "https://photos.404human.com/photos";
+ * const BASE_URL = "https://pub-xxxx.r2.dev/photos";
+ * const BASE_URL = "https://res.cloudinary.com/xxx/image/upload/v123";
+ */
+const BASE_URL = "https://YOUR_IMAGE_HOST/photos";
+
+function normalizeBaseUrl(url) {
+  return url.replace(/\/+$/, ""); // 끝 슬래시 제거
+}
+
+function joinUrl(base, file) {
+  const safeBase = normalizeBaseUrl(base);
+  const safeFile = encodeURIComponent(file);
+  return `${safeBase}/${safeFile}`;
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -80,9 +102,22 @@ function shuffle(arr) {
 }
 
 function renderPhotos(files) {
+  const base = normalizeBaseUrl(BASE_URL);
+
+  // BASE_URL 안 바꿨으면 아무 것도 안 그림(실수 방지)
+  if (!base || base.includes("YOUR_IMAGE_HOST")) {
+    photoGrid.innerHTML = `
+      <div class="mono" style="opacity:.7; text-align:center; padding:20px;">
+        PHOTO SOURCE NOT SET<br/>
+        BASE_URL을 네 이미지 호스트 주소로 바꿔줘.
+      </div>
+    `;
+    return;
+  }
+
   photoGrid.innerHTML = files
     .map((file) => {
-      const src = `images/photos/${file}`;
+      const src = joinUrl(base, file);
       return `
         <div class="photo-item" data-src="${src}" data-name="${file}">
           <img src="${src}" alt="${file}" loading="lazy" />
@@ -94,7 +129,11 @@ function renderPhotos(files) {
 
 async function loadPhotos() {
   try {
-    const res = await fetch("images/photos/photos.json", { cache: "no-store" });
+    // ✅ manifest는 사이트(Cloudtype)에서 가져오고
+    // 사진은 BASE_URL(외부 호스트)에서 가져오는 구조
+    const res = await fetch("/images/photos/photos.json", {
+      cache: "no-store",
+    });
     if (!res.ok) throw new Error("photos.json load failed");
     const data = await res.json();
     allPhotos = Array.isArray(data.files) ? data.files : [];
